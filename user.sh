@@ -2,24 +2,24 @@
 
 while [ true ]
 do
-	cd /home/uzmah/Documents/Create_User/TpUtilisateur
+	cd ~/src/TpUtilisateur
 
 	code="$(ls)"
 	fichier="employees.csv"
 
 	if [[ "$code" == "*$fichier*" ]]
 	then
-		cd /home/uzmah/Documents/Create_User/TpUtilisateur
+		cd ~/src/TpUtilisateur
 		# Pour convertir le fichier excel(.xls) en fichier (.csv)
 		xls2csv Employees.xls > employees.csv
 	else
-		cd /home/uzmah/Documents/Create_User/TpUtilisateur
+		cd ~/src/TpUtilisateur
                 touch employees.csv
                 xls2csv Employees.xls > employees.csv
 	fi
 
 	# Le repertoire du fichier employees.csv stocker dans la variable liste
-	liste="/home/uzmah/Documents/Create_User/TpUtilisateur/employees.csv"
+	liste="~/src/TpUtilisateur/employees.csv"
 
 	# Stocker les users obtenu par le code dans un array
 	array=($(awk -F: '{ print $1 }' /etc/passwd))
