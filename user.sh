@@ -1,32 +1,25 @@
 #!/bin/bash
 
-cd
-cd src/TpUtilisateur
-code="$(ls)"
-fichier="employees.csv"
-
+cd /home/uzmah/src/TpUtilisateur
 while [ true ]
 do
-	cd
-	cd src/TpUtilisateur
+	cd /home/uzmah/src/TpUtilisateur
 	code="$(ls)"
 	fichier="employees.csv"
 
 	if [[ "$code" == "*$fichier*" ]]
 	then
-		cd
-		cd src/TpUtilisateur
+		cd /home/uzmah/src/TpUtilisateur
 		# Pour convertir le fichier excel(.xls) en fichier (.csv)
 		xls2csv Employees.xls > employees.csv
 	else
-		cd
-		cd src/TpUtilisateur
-                touch employees.csv
-                xls2csv Employees.xls > employees.csv
+                touch /home/uzmah/src/TpUtilisateur/employees.csv
+		cd /home/uzmah/src/TpUtilisateur
+		xls2csv Employees.xls > employees.csv
 	fi
 
 	# Le repertoire du fichier employees.csv stocker dans la variable liste
-	liste="~/src/TpUtilisateur/employees.csv"
+	liste="/home/uzmah/src/TpUtilisateur/employees.csv"
 
 	# Stocker les users obtenu par le code dans un array
 	array=($(awk -F: '{ print $1 }' /etc/passwd))
