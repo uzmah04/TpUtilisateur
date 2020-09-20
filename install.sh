@@ -25,15 +25,12 @@ else
         echo "src/TpUtilisateur created"
 fi
 
-sudo cd TpUtilisateur
-sudo chmod +x user.sh
-
+cd ~/src/TpUtilisateur
 sudo cp ~/src/TpUtilisateur/user.service /etc/systemd/system/user.service
-sudo chmod +x /etc/systemd/system/check.service
 
 sudo sudo systemctl start user.service
 
 sudo sudo systemctl enable user.service
 
-echo -e " \e[5mInstallation Completed \e[25m!"
+echo "Installation Completed"
 

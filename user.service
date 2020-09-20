@@ -1,6 +1,6 @@
-[[Unit]
+[Unit]
 Description=Create User Automatically Service
 
 [Service]
-ExecStart=/home/uzmah/Documents/Create_User/TpUtilisateur/user.sh
+ExecStart=/home/uzmah/src/TpUtilisateur/user.sh
 
