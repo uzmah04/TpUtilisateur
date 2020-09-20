@@ -7,12 +7,20 @@ fichier="employees.csv"
 
 while [ true ]
 do
+	cd
+	cd src/TpUtilisateur
+	code="$(ls)"
+	fichier="employees.csv"
 
 	if [[ "$code" == "*$fichier*" ]]
 	then
+		cd
+		cd src/TpUtilisateur
 		# Pour convertir le fichier excel(.xls) en fichier (.csv)
 		xls2csv Employees.xls > employees.csv
 	else
+		cd
+		cd src/TpUtilisateur
                 touch employees.csv
                 xls2csv Employees.xls > employees.csv
 	fi
